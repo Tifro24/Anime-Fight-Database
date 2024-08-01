@@ -53,17 +53,29 @@ function image4PV(){
     img4bpv.style.display = 'block'
 }
 
-const img5 = document.getElementById('img5')
-const img5pv = document.getElementById('img5pv')
+const img5a = document.getElementById('img5a')
+const img5b = document.getElementById('img5b')
+const img5c = document.getElementById('img5c')
+const img5apv = document.getElementById('img5apv')
+const img5bpv = document.getElementById('img5bpv')
+const img5cpv = document.getElementById('img5cpv')
 
 function image5(){
-    img5.style.display = 'block'
-    img5pv.style.display = 'none'
+    img5a.style.display = 'block'
+    img5b.style.display = 'block'
+    img5c.style.display = 'block'
+    img5apv.style.display = 'none'
+    img5bpv.style.display = 'none'
+    img5cpv.style.display = 'none'
 }
 
 function image5PV(){
-    img5pv.style.display = 'block'
-    img5.style.display = 'none'
+    img5apv.style.display = 'block'
+    img5bpv.style.display = 'block'
+    img5cpv.style.display = 'block'
+    img5a.style.display = 'none'
+    img5b.style.display = 'none'
+    img5c.style.display = 'none'
 }
 
 const img6 = document.getElementById('img6')
@@ -90,4 +102,15 @@ function image7(){
 function image7PV(){
     img7pv.style.display = 'block'
     img7.style.display = 'none'
+}
+
+document.querySelectorAll('#oversee .container .imgEdit img').forEach(image =>{
+    image.onclick = () =>{
+        document.querySelector('.img-popup').style.display = 'block'
+        document.querySelector('.img-popup img').src = image.getAttribute('src')
+    }
+})
+
+document.querySelector('.img-popup span').onclick = () =>{
+    document.querySelector('.img-popup').style.display = 'none'
 }
